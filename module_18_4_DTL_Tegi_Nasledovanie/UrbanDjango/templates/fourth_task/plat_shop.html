@@ -1,0 +1,21 @@
+{% extends 'fourth_task/platform.html' %}
+
+{% block title %} plat_shop {% endblock %}
+
+{% block pagename %}
+    <h1>Игры:</h1>
+{% endblock %}
+
+{% block menu %}
+    {{ block.super }}
+{% endblock %}
+
+{% block content %}
+    <ul>
+        <h3>
+            <li>Передний край - </li><button>Купить</button>
+            <li>Спарта 2035 - </li><button>Купить</button>
+            <li>Сатурн - </li><button>Купить</button>
+        </h3>
+    </ul>
+{% endblock %}

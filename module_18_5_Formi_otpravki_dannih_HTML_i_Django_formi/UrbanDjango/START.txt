@@ -1,0 +1,7 @@
+# Создание файла .gitignore в неё скопировать из сайта gitignore.io в поле ввода ввести django
+# Создание виртуального окружения: python -m venv .venv
+# Вход в виртуальное окружение: .venv\Scripts\activate
+# Создание Джанго проекта: django-admin startproject UrbanDjango
+# Переход в папку с сайтом: cd UrbanDjango
+# Запуск сервера: python manage.py runserver
+# Создание приложений в проекте Джанго: python manage.py startapp example1, example2, example3
