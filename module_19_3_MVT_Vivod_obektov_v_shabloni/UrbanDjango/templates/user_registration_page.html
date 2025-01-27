@@ -1,0 +1,43 @@
+{% extends 'menu.html' %}
+
+{% block title %} user_registration_page {% endblock %}
+
+{% block pagename %}
+    <h1>Регистрация пользователя:</h1>
+{% endblock %}
+
+{% block menu %}
+    {% if errors %}
+        <h3>Ошибка(и):</h3>
+        <ul>
+            {% for error in errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        {% if final %}
+            <h3>{{ final }}</h3>
+        {% endif %}
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        <label for="username">Введите логин:</label>
+        <br><input type="text" id="username" name="username" maxlength="30" required>
+
+        <br><label for="password">Введите пароль:</label>
+        <br><input type="text" id="password" name="password" minlength="8" required>
+
+        <br><label for="repeat_password">Повторите пароль:</label>
+        <br><input type="text" id="repeat_password" name="repeat_password" minlength="8" required>
+
+        <br><label for="age">Введите свой возраст:</label>
+        <br><input type="text" id="age" name="age" maxlength="3" required>
+
+        <br><button type="submit">Отправить</button>
+    </form>
+    <br>
+    <button><a href="http://127.0.0.1:8000/">Вернуться обратно</a></button>
+{% endblock %}
