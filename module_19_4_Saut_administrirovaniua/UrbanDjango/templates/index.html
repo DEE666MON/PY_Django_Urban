@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <h1>Добро пожаловать. {{ text }}</h1>
+    <p>Ссылки:</p>
+        <br><a href="http://127.0.0.1:8000/class_template/">Шаблон класса</a>
+        <br><a href="http://127.0.0.1:8000/func_template/">Шаблон функции</a>
+        <br><a href="http://127.0.0.1:8000/platform/">Главная страница платформы</a>
+        <br><a href="http://127.0.0.1:8000/user_registration_page/">Регистрация пользователя</a>
+        <br><a href="http://127.0.0.1:8000/game_registration_page/">Регистрация игры</a>
+    <ul>
+        Пользователи:
+        {% for buyer in Buyers %}
+            <li>{{buyer.name}} | {{buyer.balance}} | {{buyer.age}}</li>
+        {% endfor %}
+    </ul>
+    <ul>
+        Игры:
+        {% for game in Games %}
+            <li>{{game.title}} | {{game.description}} | {{game.cost}} | {{game.size}} | {{game.age_limited}}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
