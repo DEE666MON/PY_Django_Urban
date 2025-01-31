@@ -1,0 +1,43 @@
+{% extends 'menu.html' %}
+
+{% block title %}game_registration_page{% endblock %}
+
+{% block pagename %}<h1>Регистрация игры:</h1>{% endblock %}
+
+{% block menu %}
+    {% if errors %}
+        <h3>Ошибка(и):</h3>
+        <ul>
+            {% for error in errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        {% if final %}
+            <h3>{{ final }}</h3>
+        {% endif %}
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        <label for="title">Введите название игры:</label>
+        <br><input type="text" id="title" name="title" maxlength="100" required>
+
+        <br><label for="description">Введите описание игры:</label>
+        <br><textarea id="description" name="description"></textarea>
+
+        <br><label for="cost">Введите стоимость игры:</label>
+        <br><input type="text" id="cost" name="cost" required>
+
+        <br><label for="size">Введите размер игры:</label>
+        <br><input type="text" id="size" name="size" required>
+
+        <br><label for="age_limited">Игра ограничена для лиц не достигших 18 лет</label>
+        <br><input type="checkbox" id="age_limited" name="age_limited">
+
+        <br><button type="submit">Отправить</button>
+    </form>
+    <br><button><a href="http://127.0.0.1:8000/">Вернуться обратно</a></button>
+{% endblock %}

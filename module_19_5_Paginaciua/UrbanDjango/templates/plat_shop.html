@@ -1,0 +1,17 @@
+{% extends 'platform.html' %}
+
+{% block title %}plat_shop{% endblock %}
+
+{% block pagename %}<h1>Игры:</h1>{% endblock %}
+
+{% block menu %} {{ block.super }}{% endblock %}
+
+{% block content %}
+    <ul>
+        <h3>
+            {% for game in Games %}
+                <li>{{game.title}} | {{game.description}} | Стоимость: {{game.cost}} <button>Купить</button></li>
+            {% endfor %}
+        </h3>
+    </ul>
+{% endblock %}
